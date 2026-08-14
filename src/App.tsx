@@ -14,6 +14,14 @@ export default function App() {
   useScrollReveal()
 
   useEffect(() => {
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual"
+    }
+
+    window.scrollTo({ top: 0, left: 0, behavior: "auto" })
+  }, [])
+
+  useEffect(() => {
     document.documentElement.classList.toggle("dark", dark)
   }, [dark])
 
