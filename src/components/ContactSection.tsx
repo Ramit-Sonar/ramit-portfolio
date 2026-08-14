@@ -133,7 +133,7 @@ export default function ContactSection({
                   </span>
                   <input type="text" placeholder="Your Name" value={formData.name}
                     onChange={e => { setFormData(p => ({ ...p, name: e.target.value })); setFormErrors(p => ({ ...p, name: "" })) }}
-                    style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: 10, border: `1.5px solid ${formErrors.name ? "#ef4444" : borderColor}`, backgroundColor: dark ? "#0d1117" : "#f9fafb", fontSize: 15, color: textPrimary, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s, box-shadow 0.2s" }}
+                    style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: 10, border: `1.5px solid ${formErrors.name ? "#ef4444" : borderColor}`, backgroundColor: dark ? "#0d1117" : "#f9fafb", fontSize: 15, color: textPrimary, outline: "none", boxSizing: "border-box", transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 650ms cubic-bezier(0.22, 1, 0.36, 1)" }}
                     onFocus={e => { e.currentTarget.style.borderColor = formErrors.name ? "#ef4444" : "#06b6d4"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(6,182,212,0.12)" }}
                     onBlur={e => { e.currentTarget.style.borderColor = formErrors.name ? "#ef4444" : borderColor; e.currentTarget.style.boxShadow = "none" }}
                   />
@@ -148,7 +148,7 @@ export default function ContactSection({
                   </span>
                   <input type="email" placeholder="Your Email" value={formData.email}
                     onChange={e => { setFormData(p => ({ ...p, email: e.target.value })); setFormErrors(p => ({ ...p, email: "" })) }}
-                    style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: 10, border: `1.5px solid ${formErrors.email ? "#ef4444" : borderColor}`, backgroundColor: dark ? "#0d1117" : "#f9fafb", fontSize: 15, color: textPrimary, outline: "none", boxSizing: "border-box", transition: "border-color 0.2s, box-shadow 0.2s" }}
+                    style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: 10, border: `1.5px solid ${formErrors.email ? "#ef4444" : borderColor}`, backgroundColor: dark ? "#0d1117" : "#f9fafb", fontSize: 15, color: textPrimary, outline: "none", boxSizing: "border-box", transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 650ms cubic-bezier(0.22, 1, 0.36, 1)" }}
                     onFocus={e => { e.currentTarget.style.borderColor = formErrors.email ? "#ef4444" : "#06b6d4"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(6,182,212,0.12)" }}
                     onBlur={e => { e.currentTarget.style.borderColor = formErrors.email ? "#ef4444" : borderColor; e.currentTarget.style.boxShadow = "none" }}
                   />
@@ -163,7 +163,7 @@ export default function ContactSection({
                   </span>
                   <textarea rows={6} placeholder="Your Message" value={formData.message}
                     onChange={e => { setFormData(p => ({ ...p, message: e.target.value })); setFormErrors(p => ({ ...p, message: "" })) }}
-                    style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: 10, border: `1.5px solid ${formErrors.message ? "#ef4444" : borderColor}`, backgroundColor: dark ? "#0d1117" : "#f9fafb", fontSize: 15, color: textPrimary, outline: "none", resize: "none", boxSizing: "border-box", transition: "border-color 0.2s, box-shadow 0.2s" }}
+                    style={{ width: "100%", padding: "14px 16px 14px 44px", borderRadius: 10, border: `1.5px solid ${formErrors.message ? "#ef4444" : borderColor}`, backgroundColor: dark ? "#0d1117" : "#f9fafb", fontSize: 15, color: textPrimary, outline: "none", resize: "none", boxSizing: "border-box", transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 650ms cubic-bezier(0.22, 1, 0.36, 1)" }}
                     onFocus={e => { e.currentTarget.style.borderColor = formErrors.message ? "#ef4444" : "#06b6d4"; e.currentTarget.style.boxShadow = "0 0 0 3px rgba(6,182,212,0.12)" }}
                     onBlur={e => { e.currentTarget.style.borderColor = formErrors.message ? "#ef4444" : borderColor; e.currentTarget.style.boxShadow = "none" }}
                   />

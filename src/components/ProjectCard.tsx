@@ -31,7 +31,7 @@ export default function ProjectCard({ project, dark }: { project: Project; dark:
         boxShadow: hovered
           ? "0 0 0 2px rgba(6,182,212,0.5), 0 0 28px rgba(6,182,212,0.18), 0 24px 56px rgba(0,0,0,0.12)"
           : dark ? "0 4px 24px rgba(0,0,0,0.22)" : "0 4px 24px rgba(0,0,0,0.08)",
-        transition: "box-shadow 0.35s ease",
+        transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 650ms cubic-bezier(0.22, 1, 0.36, 1)",
         display: "grid",
         gridTemplateColumns: "42% 1fr",
       }}
@@ -108,7 +108,7 @@ export default function ProjectCard({ project, dark }: { project: Project; dark:
               border: `1.5px solid ${btnBorder}`,
               backgroundColor: btnBg,
               color: btnColor, fontSize: 13.5, fontWeight: 600,
-              textDecoration: "none", transition: "all 0.2s",
+              textDecoration: "none", transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
             }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = "#06b6d4"; e.currentTarget.style.color = "#06b6d4" }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = btnBorder; e.currentTarget.style.color = btnColor }}
@@ -123,7 +123,7 @@ export default function ProjectCard({ project, dark }: { project: Project; dark:
               border: `1.5px solid ${btnBorder}`,
               backgroundColor: btnBg,
               color: btnColor, fontSize: 13.5, fontWeight: 600,
-              textDecoration: "none", transition: "all 0.2s",
+              textDecoration: "none", transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
             }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = "#7c3aed"; e.currentTarget.style.color = "#7c3aed" }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = btnBorder; e.currentTarget.style.color = btnColor }}

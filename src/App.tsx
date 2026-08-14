@@ -21,7 +21,7 @@ export default function App() {
   const borderColor = dark ? "#30363d" : "#e2e8f0"
 
   return (
-    <div style={{ fontFamily: "'Inter', sans-serif", backgroundColor: bg, color: textPrimary, minHeight: "100vh", transition: "background-color 0.3s, color 0.3s" }}>
+    <div className="theme-transition" style={{ fontFamily: "'Inter', sans-serif", backgroundColor: bg, color: textPrimary, minHeight: "100vh" }}>
       <Navbar
         dark={dark}
         mobileOpen={mobileOpen}

@@ -64,7 +64,7 @@ export default function Navbar({
               background: dark ? "#161b22" : "#fff",
               color: dark ? "#f59e0b" : "#4f46e5", cursor: "pointer",
               display: "flex", alignItems: "center", justifyContent: "center",
-              transition: "all 0.2s",
+              transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
             }}
           >
             {dark ? <SunIcon /> : <MoonIcon />}
@@ -86,6 +86,7 @@ export default function Navbar({
                 color: dark ? "#f59e0b" : "#4f46e5", cursor: "pointer",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 flexShrink: 0,
+                transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
               }}
             >
               {dark ? <SunIcon /> : <MoonIcon />}
@@ -101,6 +102,7 @@ export default function Navbar({
                 display: "flex", flexDirection: "column",
                 alignItems: "center", justifyContent: "center", gap: 4,
                 flexShrink: 0, padding: 0,
+                transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
               }}
             >
               {[0, 1, 2].map(i => (
@@ -160,7 +162,7 @@ export default function Navbar({
               borderRadius: 12,
               backgroundColor: dark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.04)",
               border: `1px solid ${dark ? "rgba(255,255,255,0.07)" : "rgba(0,0,0,0.06)"}`,
-              transition: "background 0.2s",
+              transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
               display: "block",
             }}
             onMouseEnter={e => e.currentTarget.style.backgroundColor = dark ? "rgba(6,182,212,0.15)" : "rgba(6,182,212,0.08)"}

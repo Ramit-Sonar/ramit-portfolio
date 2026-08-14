@@ -35,7 +35,17 @@ export default function AboutSection({
             marginRight: "auto",
           }}>
             <div>
-              <h1 className="about-h1" style={{ fontWeight: 800, color: "#06b6d4", lineHeight: 1.1 }}>
+              <h1
+                className="about-h1"
+                style={{
+                  fontWeight: 800,
+                  lineHeight: 1.1,
+                  background: "linear-gradient(90deg, #06b6d4 0%, #7c3aed 48%, #ec4899 100%)",
+                  WebkitBackgroundClip: "text",
+                  backgroundClip: "text",
+                  color: "transparent",
+                }}
+              >
                 About Me
               </h1>
               <p className="about-body" style={{ lineHeight: 1.8, color: textPrimary, marginBottom: "1rem" }}>
@@ -62,7 +72,7 @@ export default function AboutSection({
 
             <div
               className="about-photo-wrap"
-              style={{ borderRadius: 16, transition: "box-shadow 0.35s ease", boxShadow: photoHovered ? "0 0 0 3px rgba(6,182,212,0.55), 0 0 28px rgba(6,182,212,0.35), 0 8px 32px rgba(0,0,0,0.18)" : "0 8px 28px rgba(0,0,0,0.13)" }}
+              style={{ borderRadius: 16, transition: "box-shadow 650ms cubic-bezier(0.22, 1, 0.36, 1)", boxShadow: photoHovered ? "0 0 0 3px rgba(6,182,212,0.55), 0 0 28px rgba(6,182,212,0.35), 0 8px 32px rgba(0,0,0,0.18)" : "0 8px 28px rgba(0,0,0,0.13)" }}
               onMouseEnter={() => setPhotoHovered(true)}
               onMouseLeave={() => setPhotoHovered(false)}
             >

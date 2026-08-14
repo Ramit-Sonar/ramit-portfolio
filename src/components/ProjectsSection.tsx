@@ -41,7 +41,7 @@ export default function ProjectsSection({
               padding: "10px 24px", borderRadius: 8,
               border: `1.5px solid ${borderColor}`,
               backgroundColor: cardBg, textDecoration: "none",
-              transition: "all 0.2s",
+              transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
             }}
             onMouseEnter={e => { e.currentTarget.style.borderColor = "#06b6d4"; e.currentTarget.style.color = "#06b6d4" }}
             onMouseLeave={e => { e.currentTarget.style.borderColor = borderColor; e.currentTarget.style.color = textSecondary }}

@@ -24,7 +24,7 @@ function SkillChip({ item, dark }: { item: TechItem; dark: boolean }) {
         fontSize: 14.5,
         fontWeight: 500,
         color: dark ? "#cbd5e1" : "#374151",
-        transition: "border 0.2s ease, box-shadow 0.2s ease",
+        transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 650ms cubic-bezier(0.22, 1, 0.36, 1)",
         boxShadow: chipHovered ? "0 0 0 3px rgba(6,182,212,0.15)" : "none",
         cursor: "default",
       }}
@@ -59,7 +59,7 @@ export default function SkillCard({ group, dark }: { group: TechGroup; dark: boo
         padding: "clamp(1.25rem, 3vw, 1.75rem)",
         border: dark ? "1px solid #30363d" : "none",
         boxShadow: shadow,
-        transition: "box-shadow 0.3s ease, background 0.3s ease",
+        transition: "background 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 650ms cubic-bezier(0.22, 1, 0.36, 1)",
         background: hovered ? cardHover : cardBase,
       }}
     >
