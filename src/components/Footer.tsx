@@ -1,3 +1,5 @@
+import cvFile from "@/assets/ramit_cv.pdf"
+
 export default function Footer({
   dark,
   textSecondary,
@@ -14,7 +16,8 @@ export default function Footer({
       </div>
       <div className="section-container footer-content">
         <a
-          href="#"
+          href={cvFile}
+          download="ramit_cv.pdf"
           style={{ display: "inline-block", padding: "10px 24px", borderRadius: 8, backgroundColor: "#4f46e5", color: "#fff", fontSize: 14, fontWeight: 600, textDecoration: "none", transition: "opacity 0.2s" }}
           onMouseEnter={e => e.currentTarget.style.opacity = "0.88"}
           onMouseLeave={e => e.currentTarget.style.opacity = "1"}
