@@ -10,9 +10,20 @@ export default function Footer({
   borderColor: string
 }) {
   return (
-    <footer style={{ backgroundColor: dark ? "#0a1120" : "#f3f4f6", paddingBottom: "1.5rem" }}>
+    <footer
+      style={{
+        backgroundColor: dark ? "#0a1120" : "#f3f4f6",
+        paddingBottom: "1.5rem",
+      }}
+    >
       <div className="section-container">
-        <div style={{ borderTop: `1px solid ${borderColor}`, marginBottom: "1.5rem" }} />
+        <div
+          style={{
+            height: 1,
+            backgroundColor: dark ? borderColor : "#cbd5e1",
+            marginBottom: "1.5rem",
+          }}
+        />
       </div>
       <div className="section-container footer-content">
         <a
@@ -24,7 +35,7 @@ export default function Footer({
         >
           Download CV
         </a>
-        <p style={{ fontSize: 13.5, color: textSecondary }}>© 2026 Ramit Sonar</p>
+        <p style={{ fontSize: 13.5, color: textSecondary }}>{"\u00a9"} 2026 Ramit Sonar</p>
       </div>
     </footer>
   )
