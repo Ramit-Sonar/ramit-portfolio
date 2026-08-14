@@ -184,24 +184,24 @@ h6 {
 
 /* ── Section padding ── */
 .section-pad {
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
 }
 .about-section {
   padding-top: 0;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 @media (min-width: 640px) {
-  .section-pad { padding-top: 4rem; padding-bottom: 4rem; }
-  .about-section { padding-bottom: 4rem; }
-}
-@media (min-width: 1024px) {
-  .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
-  .about-section { padding-bottom: 5rem; }
-}
-@media (max-width: 480px) {
   .section-pad { padding-top: 2.75rem; padding-bottom: 2.75rem; }
   .about-section { padding-bottom: 2.75rem; }
+}
+@media (min-width: 1024px) {
+  .section-pad { padding-top: 3.25rem; padding-bottom: 3.25rem; }
+  .about-section { padding-bottom: 3.25rem; }
+}
+@media (max-width: 480px) {
+  .section-pad { padding-top: 1.75rem; padding-bottom: 1.75rem; }
+  .about-section { padding-bottom: 1.75rem; }
 }
 
 /* ── Section container ── */
