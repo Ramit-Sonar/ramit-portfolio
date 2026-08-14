@@ -1,0 +1,332 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', sans-serif;
+  --font-mono: 'Fira Code', monospace;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #0f172a;
+  --card: #f8fafc;
+  --card-foreground: #1e293b;
+  --primary: #06b6d4;
+  --primary-foreground: #ffffff;
+  --secondary: #f1f5f9;
+  --secondary-foreground: #475569;
+  --muted: #f8fafc;
+  --muted-foreground: #64748b;
+  --accent: #06b6d4;
+  --accent-foreground: #ffffff;
+  --border: #e2e8f0;
+  --ring: #06b6d4;
+  --radius: 0.5rem;
+}
+
+.dark {
+  --background: #0d1117;
+  --foreground: #f1f5f9;
+  --card: #161b22;
+  --card-foreground: #f1f5f9;
+  --primary: #22d3ee;
+  --primary-foreground: #0f172a;
+  --secondary: #1e293b;
+  --secondary-foreground: #94a3b8;
+  --muted: #1e293b;
+  --muted-foreground: #94a3b8;
+  --accent: #22d3ee;
+  --accent-foreground: #0f172a;
+  --border: #334155;
+  --ring: #22d3ee;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--background);
+  color: var(--foreground);
+  transition: background-color 0.3s, color 0.3s;
+  overflow-x: hidden;
+}
+
+/* ── Theme toggle button hover ── */
+.theme-toggle:hover {
+  background: rgba(6, 182, 212, 0.12) !important;
+  border-color: rgba(6, 182, 212, 0.5) !important;
+  transform: rotate(20deg) scale(1.08);
+}
+
+/* ── Nav link sliding underline ── */
+.nav-link {
+  position: relative;
+  text-decoration: none !important;
+}
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #06b6d4;
+  border-radius: 2px;
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* ── Nav helpers ── */
+.hidden-mobile { display: flex !important; }
+.show-mobile   { display: none  !important; }
+
+@media (max-width: 720px) {
+  .hidden-mobile { display: none  !important; }
+  .show-mobile   { display: flex  !important; }
+  .show-mobile-block { display: block !important; }
+}
+
+/* Mobile drawer/backdrop — always rendered for CSS transition, hidden on desktop */
+.mobile-drawer {
+  display: none !important;
+}
+@media (max-width: 720px) {
+  .mobile-drawer { display: block !important; }
+  .mobile-drawer-panel { display: flex !important; }
+}
+
+/* ── Section padding ── */
+.section-pad {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+@media (min-width: 640px) {
+  .section-pad { padding-top: 4rem; padding-bottom: 4rem; }
+}
+@media (min-width: 1024px) {
+  .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
+}
+
+/* ── Section container ── */
+.section-container {
+  width: 100%;
+  max-width: 1280px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+@media (min-width: 640px) {
+  .section-container { padding-left: 1.5rem; padding-right: 1.5rem; }
+}
+@media (min-width: 1024px) {
+  .section-container { padding-left: 2rem; padding-right: 2rem; }
+}
+
+/* ── Fluid headings ── */
+.h-section-xl {
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.1;
+}
+.h-section-lg {
+  font-size: clamp(1.75rem, 5vw, 3rem);
+  font-weight: 800;
+  line-height: 1.1;
+}
+.h-section-blog {
+  font-size: clamp(2rem, 6vw, 3.25rem);
+  font-weight: 900;
+}
+
+/* ── 3-col responsive grid ── */
+.grid-3 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 600px) {
+  .grid-3 { grid-template-columns: 1fr 1fr; gap: 1.25rem; }
+}
+@media (min-width: 1024px) {
+  .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
+}
+
+/* ── 2-col responsive grid ── */
+.grid-2 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+@media (min-width: 640px) {
+  .grid-2 { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
+}
+
+/* ── Contact 2-col grid ── */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+@media (min-width: 1024px) {
+  .contact-grid { grid-template-columns: 1fr 1.4fr; gap: 4rem; }
+}
+
+/* ── About section ── */
+.about-outer {
+  max-width: 96vw;
+  margin: 0 auto;
+  padding: 0 4px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+@media (min-width: 1024px) {
+  .about-outer { max-width: 85vw; padding: 0 2px; }
+}
+
+.about-bg-card {
+  min-height: auto !important;
+  padding: 24px 16px !important;
+  display: flex;
+  align-items: flex-start !important;
+}
+@media (min-width: 640px) {
+  .about-bg-card { padding: 32px 24px !important; align-items: center !important; }
+}
+@media (min-width: 1024px) {
+  .about-bg-card {
+    min-height: calc(100vh + 60px) !important;
+    padding: 40px 48px !important;
+    align-items: center !important;
+  }
+}
+
+.about-card {
+  grid-template-columns: 1fr !important;
+  text-align: center;
+  padding: 1.5rem !important;
+  width: 100% !important;
+  gap: 1.5rem !important;
+  transform: translateY(0) !important;
+}
+@media (min-width: 768px) {
+  .about-card {
+    grid-template-columns: 1fr auto !important;
+    text-align: left;
+    padding: 2.5rem !important;
+    gap: 2.5rem !important;
+    transform: translateY(-20px) !important;
+    width: 100% !important;
+  }
+}
+@media (min-width: 1024px) {
+  .about-card {
+    padding: 3.5rem 3rem !important;
+    gap: 4rem !important;
+    transform: translateY(-35px) !important;
+    width: 95% !important;
+  }
+}
+
+.about-h1 {
+  font-size: clamp(1.75rem, 6vw, 3.375rem) !important;
+  margin-bottom: 1rem !important;
+}
+
+.about-body {
+  font-size: clamp(0.9375rem, 2.2vw, 1.0625rem) !important;
+}
+
+.about-photo-wrap {
+  flex-shrink: 0;
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .about-photo-wrap { margin: 0; }
+}
+
+.about-photo {
+  width: clamp(180px, 45vw, 350px) !important;
+  height: auto !important;
+  aspect-ratio: 350 / 435;
+  display: block;
+}
+
+.about-cta {
+  display: inline-block;
+  padding: 13px 32px;
+  border-radius: 8px;
+  min-height: 44px;
+  font-size: 15px;
+  font-weight: 700;
+}
+@media (max-width: 767px) {
+  .about-cta { width: 100%; text-align: center; }
+}
+
+/* ── Blog inner card padding ── */
+.blog-inner {
+  padding: 2rem 1.25rem !important;
+  border-radius: 20px !important;
+}
+@media (min-width: 640px) {
+  .blog-inner { padding: 2.5rem 2rem !important; }
+}
+@media (min-width: 1024px) {
+  .blog-inner { padding: 3.5rem 3rem !important; border-radius: 24px !important; }
+}
+
+/* ── Card full-width on mobile ── */
+.card-resp {
+  border-radius: 16px;
+}
+@media (min-width: 640px) {
+  .card-resp { border-radius: 20px; }
+}
+
+/* ── Horizontal project card ── */
+.project-card-h {
+  grid-template-columns: 42% 1fr !important;
+}
+@media (max-width: 720px) {
+  .project-card-h {
+    grid-template-columns: 1fr !important;
+  }
+  .project-card-h > div:first-child {
+    min-height: 200px !important;
+  }
+}
+
+/* ── Footer responsive ── */
+.footer-content {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+@media (max-width: 480px) {
+  .footer-content {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ── Touch targets ── */
+a, button { min-height: 44px; }
+nav a { min-height: unset; }
+
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
