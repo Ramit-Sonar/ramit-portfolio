@@ -439,7 +439,10 @@ h6 {
 a, button { min-height: 44px; }
 nav a { min-height: unset; }
 
-::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar { width: 9px; }
 ::-webkit-scrollbar-track { background: transparent; }
-::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 999px; }
 ::-webkit-scrollbar-thumb:hover { background: var(--muted-foreground); }
+
+.dark ::-webkit-scrollbar-thumb { background: #64748b; }
+.dark ::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
