@@ -1,6 +1,9 @@
 import { useState, type FormEvent } from "react"
 import { GitHubIcon, LinkedInIcon } from "./Icons"
 
+const GOOGLE_SHEET_URL =
+  "https://script.google.com/macros/s/AKfycbwY4HeDrgljDi77a9IfqOdmgMP7rzKbbRHL6Zh30P80FYxNsqxsoZf6h85IiUT26dzU/exec"
+
 export default function ContactSection({
   dark,
   textPrimary,
@@ -15,6 +18,8 @@ export default function ContactSection({
   const [formData, setFormData] = useState({ name: "", email: "", message: "" })
   const [formErrors, setFormErrors] = useState({ name: "", email: "", message: "" })
   const [formSubmitted, setFormSubmitted] = useState(false)
+  const [submitError, setSubmitError] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false)
 
   function validateForm() {
     const errors = { name: "", email: "", message: "" }
@@ -26,15 +31,40 @@ export default function ContactSection({
     return errors
   }
 
-  function handleSubmit(e: FormEvent) {
+  async function handleSubmit(e: FormEvent) {
     e.preventDefault()
     const errors = validateForm()
     setFormErrors(errors)
+    setFormSubmitted(false)
+    setSubmitError("")
 
     if (!errors.name && !errors.email && !errors.message) {
-      setFormSubmitted(true)
-      setFormData({ name: "", email: "", message: "" })
-      setTimeout(() => setFormSubmitted(false), 4000)
+      try {
+        setIsSubmitting(true)
+        const response = await fetch(GOOGLE_SHEET_URL, {
+          method: "POST",
+          headers: {
+            "Content-Type": "text/plain;charset=utf-8",
+          },
+          body: JSON.stringify({
+            name: formData.name.trim(),
+            email: formData.email.trim(),
+            message: formData.message.trim(),
+          }),
+        })
+
+        if (!response.ok) {
+          throw new Error("Message could not be sent.")
+        }
+
+        setFormSubmitted(true)
+        setFormData({ name: "", email: "", message: "" })
+        setTimeout(() => setFormSubmitted(false), 4000)
+      } catch {
+        setSubmitError("Message could not be sent. Please try again.")
+      } finally {
+        setIsSubmitting(false)
+      }
     }
   }
 
@@ -125,6 +155,12 @@ export default function ContactSection({
               </div>
             )}
 
+            {submitError && (
+              <div style={{ background: "rgba(239,68,68,0.10)", border: "1.5px solid rgba(239,68,68,0.35)", borderRadius: 10, padding: "14px 18px", marginBottom: 20, color: "#ef4444", fontWeight: 600, fontSize: 15 }}>
+                {submitError}
+              </div>
+            )}
+
             <form onSubmit={handleSubmit} noValidate style={{ display: "flex", flexDirection: "column", gap: 18 }}>
               <div>
                 <div style={{ position: "relative" }}>
@@ -171,8 +207,8 @@ export default function ContactSection({
                 {formErrors.message && <p style={{ color: "#ef4444", fontSize: 13, marginTop: 5, marginLeft: 4 }}>{formErrors.message}</p>}
               </div>
 
-              <button type="submit"
-                style={{ width: "100%", padding: "15px", borderRadius: 10, border: "none", background: "linear-gradient(90deg, #06b6d4, #ec4899)", color: "#fff", fontSize: 15, fontWeight: 700, cursor: "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, transition: "opacity 0.2s, transform 0.15s" }}
+              <button type="submit" disabled={isSubmitting}
+                style={{ width: "100%", padding: "15px", borderRadius: 10, border: "none", background: "linear-gradient(90deg, #06b6d4, #ec4899)", color: "#fff", fontSize: 15, fontWeight: 700, cursor: isSubmitting ? "not-allowed" : "pointer", display: "flex", alignItems: "center", justifyContent: "center", gap: 8, transition: "opacity 0.2s, transform 0.15s" }}
                 onMouseEnter={e => { e.currentTarget.style.opacity = "0.9"; e.currentTarget.style.transform = "translateY(-1px)" }}
                 onMouseLeave={e => { e.currentTarget.style.opacity = "1"; e.currentTarget.style.transform = "translateY(0)" }}
               >
