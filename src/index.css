@@ -187,14 +187,21 @@ h6 {
   padding-top: 3rem;
   padding-bottom: 3rem;
 }
+.about-section {
+  padding-top: 0;
+  padding-bottom: 3rem;
+}
 @media (min-width: 640px) {
   .section-pad { padding-top: 4rem; padding-bottom: 4rem; }
+  .about-section { padding-bottom: 4rem; }
 }
 @media (min-width: 1024px) {
   .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
+  .about-section { padding-bottom: 5rem; }
 }
 @media (max-width: 480px) {
   .section-pad { padding-top: 2.75rem; padding-bottom: 2.75rem; }
+  .about-section { padding-bottom: 2.75rem; }
 }
 
 /* ── Section container ── */
