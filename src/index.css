@@ -92,7 +92,6 @@ body {
 @media (max-width: 720px) {
   .hidden-mobile { display: none  !important; }
   .show-mobile   { display: flex  !important; }
-  .show-mobile-block { display: block !important; }
 }
 
 /* Mobile drawer/backdrop — always rendered for CSS transition, hidden on desktop */
@@ -133,19 +132,10 @@ body {
 }
 
 /* ── Fluid headings ── */
-.h-section-xl {
-  font-size: clamp(2rem, 6vw, 3.5rem);
-  font-weight: 900;
-  line-height: 1.1;
-}
 .h-section-lg {
   font-size: clamp(1.75rem, 5vw, 3rem);
   font-weight: 800;
   line-height: 1.1;
-}
-.h-section-blog {
-  font-size: clamp(2rem, 6vw, 3.25rem);
-  font-weight: 900;
 }
 
 /* ── 3-col responsive grid ── */
@@ -162,15 +152,6 @@ body {
 }
 
 /* ── 2-col responsive grid ── */
-.grid-2 {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 1rem;
-}
-@media (min-width: 640px) {
-  .grid-2 { grid-template-columns: 1fr 1fr; gap: 1.75rem; }
-}
-
 /* ── Contact 2-col grid ── */
 .contact-grid {
   display: grid;
@@ -275,25 +256,7 @@ body {
 }
 
 /* ── Blog inner card padding ── */
-.blog-inner {
-  padding: 2rem 1.25rem !important;
-  border-radius: 20px !important;
-}
-@media (min-width: 640px) {
-  .blog-inner { padding: 2.5rem 2rem !important; }
-}
-@media (min-width: 1024px) {
-  .blog-inner { padding: 3.5rem 3rem !important; border-radius: 24px !important; }
-}
-
 /* ── Card full-width on mobile ── */
-.card-resp {
-  border-radius: 16px;
-}
-@media (min-width: 640px) {
-  .card-resp { border-radius: 20px; }
-}
-
 /* ── Horizontal project card ── */
 .project-card-h {
   grid-template-columns: 42% 1fr !important;
