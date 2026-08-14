@@ -137,7 +137,7 @@ export const projects: Project[] = [
       "Digital token generation",
       "Live queue tracking",
       "Staff queue management",
-      "English â‡„ à¤¨à¥‡à¤ªà¤¾à¤²à¥€ language support",
+      "English ⇄ नेपाली language support",
     ],
     demoLink: "#",
     codeLink: "https://github.com/Ramit-Sonar/queueless-nepal.git",

@@ -21,7 +21,7 @@ export default function Footer({
         >
           Download CV
         </a>
-        <p style={{ fontSize: 13.5, color: textSecondary }}>Â© 2026 Ramit Sonar</p>
+        <p style={{ fontSize: 13.5, color: textSecondary }}>© 2026 Ramit Sonar</p>
       </div>
     </footer>
   )
