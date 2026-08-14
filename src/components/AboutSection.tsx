@@ -1,6 +1,8 @@
 import { useState } from "react"
 import { profileImage } from "@/data/portfolio"
 
+const aboutHeading = "About Me"
+
 export default function AboutSection({
   dark,
   textPrimary,
@@ -46,7 +48,15 @@ export default function AboutSection({
                   color: "transparent",
                 }}
               >
-                About Me
+                {aboutHeading.split("").map((letter, index) => (
+                  <span
+                    className="about-heading-letter"
+                    key={`${letter}-${index}`}
+                    style={{ animationDelay: `${index * 90}ms` }}
+                  >
+                    {letter === " " ? "\u00a0" : letter}
+                  </span>
+                ))}
               </h1>
               <p className="about-body" style={{ lineHeight: 1.8, color: textPrimary, marginBottom: "1rem" }}>
                 Hey there! I'm{" "}
