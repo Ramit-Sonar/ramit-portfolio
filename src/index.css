@@ -111,6 +111,22 @@ h6 {
   .show-mobile   { display: flex  !important; }
 }
 
+@media (max-width: 720px) {
+  .navbar-inner {
+    height: 64px !important;
+    padding-left: 16px !important;
+    padding-right: 16px !important;
+  }
+
+  .site-logo {
+    font-size: 22px !important;
+  }
+
+  .mobile-nav-actions {
+    gap: 10px !important;
+  }
+}
+
 /* Mobile drawer/backdrop — always rendered for CSS transition, hidden on desktop */
 .mobile-drawer {
   display: none !important;
@@ -118,6 +134,26 @@ h6 {
 @media (max-width: 720px) {
   .mobile-drawer { display: block !important; }
   .mobile-drawer-panel { display: flex !important; }
+}
+
+@media (max-width: 720px) {
+  .mobile-drawer-panel {
+    top: 10px !important;
+    right: 10px !important;
+    bottom: 10px !important;
+    width: min(320px, calc(100vw - 20px)) !important;
+    border-radius: 24px !important;
+    padding: 88px 18px 24px !important;
+    gap: 12px !important;
+  }
+
+  .mobile-drawer-panel a {
+    min-height: 54px !important;
+    display: flex !important;
+    align-items: center !important;
+    font-size: 18px !important;
+    border-radius: 16px !important;
+  }
 }
 
 /* ── Section padding ── */
@@ -130,6 +166,9 @@ h6 {
 }
 @media (min-width: 1024px) {
   .section-pad { padding-top: 5rem; padding-bottom: 5rem; }
+}
+@media (max-width: 480px) {
+  .section-pad { padding-top: 2.75rem; padding-bottom: 2.75rem; }
 }
 
 /* ── Section container ── */
@@ -146,6 +185,9 @@ h6 {
 }
 @media (min-width: 1024px) {
   .section-container { padding-left: 2rem; padding-right: 2rem; }
+}
+@media (max-width: 480px) {
+  .section-container { padding-left: 0.875rem; padding-right: 0.875rem; }
 }
 
 /* ── Fluid headings ── */
@@ -168,7 +210,6 @@ h6 {
   .grid-3 { grid-template-columns: repeat(3, 1fr); gap: 1.75rem; }
 }
 
-/* ── 2-col responsive grid ── */
 /* ── Contact 2-col grid ── */
 .contact-grid {
   display: grid;
@@ -272,8 +313,28 @@ h6 {
   .about-cta { width: 100%; text-align: center; }
 }
 
-/* ── Blog inner card padding ── */
-/* ── Card full-width on mobile ── */
+@media (max-width: 480px) {
+  .about-outer {
+    max-width: 100vw;
+    padding: 0 10px;
+  }
+
+  .about-bg-card {
+    padding: 18px 10px !important;
+    border-radius: 0 0 24px 24px !important;
+  }
+
+  .about-card {
+    padding: 1.2rem !important;
+    gap: 1.25rem !important;
+    border-radius: 22px !important;
+  }
+
+  .about-photo {
+    width: min(72vw, 260px) !important;
+  }
+}
+
 /* ── Horizontal project card ── */
 .project-card-h {
   grid-template-columns: 42% 1fr !important;
@@ -281,9 +342,25 @@ h6 {
 @media (max-width: 720px) {
   .project-card-h {
     grid-template-columns: 1fr !important;
+    border-radius: 18px !important;
   }
   .project-card-h > div:first-child {
-    min-height: 200px !important;
+    min-height: 210px !important;
+    margin: 10px 10px 0 10px !important;
+  }
+  .project-card-h > div:last-child {
+    padding: 1.4rem !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-card-h > div:first-child {
+    min-height: 180px !important;
+  }
+
+  .contact-grid > div:last-child {
+    padding: 1.4rem !important;
+    border-radius: 18px !important;
   }
 }
 

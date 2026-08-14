@@ -1,5 +1,5 @@
 import { MoonIcon, SunIcon } from "./Icons"
-import { mobileNavLinks, navLinks } from "@/data/portfolio"
+import { navLinks } from "@/data/portfolio"
 
 type NavbarProps = {
   dark: boolean
@@ -31,13 +31,13 @@ export default function Navbar({
         WebkitBackdropFilter: "blur(18px) saturate(180%)",
         borderBottom: dark ? "1px solid rgba(255,255,255,0.06)" : "1px solid rgba(0,0,0,0.06)",
       }}>
-        <div style={{
+        <div className="navbar-inner" style={{
           width: "100%", height: 60,
           display: "flex", alignItems: "center",
           paddingLeft: "calc((100vw - 80vw) / 2)",
           paddingRight: "calc((100vw - 80vw) / 2)",
         }}>
-          <a href="#about" style={{ textDecoration: "none", fontSize: 26, fontWeight: 800, letterSpacing: "-0.01em", lineHeight: 1 }}>
+          <a className="site-logo" href="#about" style={{ textDecoration: "none", fontSize: 26, fontWeight: 800, letterSpacing: "-0.01em", lineHeight: 1 }}>
             <span style={{ color: "#06b6d4" }}>Ramit </span>
             <span style={{ color: "#7c3aed" }}>Sonar</span>
           </a>
@@ -70,7 +70,7 @@ export default function Navbar({
             {dark ? <SunIcon /> : <MoonIcon />}
           </button>
 
-          <div className="show-mobile" style={{
+          <div className="show-mobile mobile-nav-actions" style={{
             marginLeft: "auto",
             display: "flex", flexDirection: "row",
             alignItems: "center", gap: 8,
@@ -151,7 +151,7 @@ export default function Navbar({
         }}
       >
         <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#06b6d4", marginBottom: 8 }}>Navigation</p>
-        {mobileNavLinks.map(({ label, href }) => (
+        {navLinks.map(({ label, href }) => (
           <a
             key={label}
             href={href}

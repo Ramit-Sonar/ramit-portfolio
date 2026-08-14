@@ -54,12 +54,6 @@ export const navLinks = [
   { label: "Contact", href: "#contact" },
 ]
 
-export const mobileNavLinks = [
-  { label: "Projects", href: "#projects" },
-  { label: "Blog", href: "#blog" },
-  { label: "Contact", href: "#contact" },
-]
-
 export const techStack: TechGroup[] = [
   {
     category: "Languages",
@@ -137,7 +131,7 @@ export const projects: Project[] = [
       "Digital token generation",
       "Live queue tracking",
       "Staff queue management",
-      "English ⇄ नेपाली language support",
+      "English \u21c4 \u0928\u0947\u092a\u093e\u0932\u0940 language support",
     ],
     demoLink: "#",
     codeLink: "https://github.com/Ramit-Sonar/queueless-nepal.git",
