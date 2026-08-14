@@ -5,10 +5,13 @@ import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
 import ProjectsSection from "@/components/ProjectsSection"
 import SkillsSection from "@/components/SkillsSection"
+import useScrollReveal from "@/hooks/useScrollReveal"
 
 export default function App() {
   const [dark, setDark] = useState(false)
   const [mobileOpen, setMobileOpen] = useState(false)
+
+  useScrollReveal()
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", dark)

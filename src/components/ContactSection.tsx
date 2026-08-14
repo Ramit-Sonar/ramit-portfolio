@@ -39,7 +39,7 @@ export default function ContactSection({
   }
 
   return (
-    <section id="contact" className="section-pad" style={{ backgroundColor: dark ? "#0d1117" : "#f3f4f6" }}>
+    <section id="contact" className="section-pad scroll-reveal" style={{ backgroundColor: dark ? "#0d1117" : "#f3f4f6" }}>
       <div className="section-container">
         <div style={{ textAlign: "center", marginBottom: "3rem" }}>
           <p style={{ fontSize: 13, fontWeight: 700, letterSpacing: "0.18em", textTransform: "uppercase", color: "#06b6d4", marginBottom: 10 }}>LET'S CONNECT</p>

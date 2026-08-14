@@ -13,7 +13,7 @@ export default function AboutSection({
   const [photoHovered, setPhotoHovered] = useState(false)
 
   return (
-    <section id="about" style={{ backgroundColor: dark ? "#0d1117" : "#f3f4f6", paddingTop: 0, paddingBottom: "2rem", marginTop: 0 }}>
+    <section id="about" className="scroll-reveal" style={{ backgroundColor: dark ? "#0d1117" : "#f3f4f6", paddingTop: 0, paddingBottom: "2rem", marginTop: 0 }}>
       <div className="about-outer">
         <div className="about-bg-card" style={{
           backgroundColor: dark ? "#161b22" : "#ffffff",

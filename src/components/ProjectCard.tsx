@@ -22,7 +22,7 @@ export default function ProjectCard({ project, dark }: { project: Project; dark:
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
-      className="project-card-h"
+      className="project-card-h scroll-reveal"
       style={{
         backgroundColor: cardBg,
         borderRadius: 20,

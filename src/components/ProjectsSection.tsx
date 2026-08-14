@@ -14,7 +14,7 @@ export default function ProjectsSection({
   cardBg: string
 }) {
   return (
-    <section id="projects" className="section-pad" style={{ backgroundColor: dark ? "#0d1117" : "#f3f4f6" }}>
+    <section id="projects" className="section-pad scroll-reveal" style={{ backgroundColor: dark ? "#0d1117" : "#f3f4f6" }}>
       <div className="section-container">
         <div style={{ textAlign: "center", marginBottom: "1rem" }}>
           <h2 className="h-section-lg" style={{ marginBottom: 14 }}>

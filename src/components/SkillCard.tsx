@@ -54,6 +54,7 @@ export default function SkillCard({ group, dark }: { group: TechGroup; dark: boo
     <div
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
+      className="scroll-reveal"
       style={{
         borderRadius: 20,
         padding: "clamp(1.25rem, 3vw, 1.75rem)",
