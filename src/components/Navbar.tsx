@@ -93,7 +93,7 @@ export default function Navbar({
             </button>
             <button
               onClick={onToggleMenu}
-              aria-label="Open menu"
+              aria-label={mobileOpen ? "Close menu" : "Open menu"}
               style={{
                 width: 36, height: 36, borderRadius: 8,
                 border: `1.5px solid ${borderColor}`,
@@ -125,48 +125,45 @@ export default function Navbar({
         className="mobile-drawer"
         style={{
           position: "fixed", inset: 0, zIndex: 98,
-          backgroundColor: "rgba(0,0,0,0.4)",
-          backdropFilter: mobileOpen ? "blur(2px)" : "none",
-          WebkitBackdropFilter: mobileOpen ? "blur(2px)" : "none",
+          backgroundColor: "transparent",
           opacity: mobileOpen ? 1 : 0,
           pointerEvents: mobileOpen ? "auto" : "none",
-          transition: "opacity 0.3s ease",
+          transition: "opacity 0.25s ease",
         }}
       />
       <div
         className="mobile-drawer mobile-drawer-panel"
         style={{
-          position: "fixed", top: 0, right: 0, bottom: 0, zIndex: 99,
-          width: 220,
-          backgroundColor: dark ? "rgba(15,23,42,0.88)" : "rgba(255,255,255,0.82)",
-          backdropFilter: "blur(24px) saturate(180%)",
-          WebkitBackdropFilter: "blur(24px) saturate(180%)",
-          borderLeft: `1px solid ${dark ? "rgba(255,255,255,0.08)" : "rgba(0,0,0,0.08)"}`,
-          boxShadow: "-8px 0 40px rgba(0,0,0,0.18)",
-          borderRadius: "20px 0 0 20px",
-          padding: "80px 28px 40px",
-          flexDirection: "column", gap: 8,
-          transform: mobileOpen ? "translateX(0)" : "translateX(100%)",
-          transition: "transform 0.35s cubic-bezier(0.4, 0, 0.2, 1)",
+          position: "fixed", top: 68, right: 16, zIndex: 99,
+          width: 156,
+          backgroundColor: "transparent",
+          border: "none",
+          boxShadow: "none",
+          borderRadius: 0,
+          padding: 0,
+          flexDirection: "column", gap: 10,
+          opacity: mobileOpen ? 1 : 0,
+          pointerEvents: mobileOpen ? "auto" : "none",
+          transform: mobileOpen ? "translateY(0) scale(1)" : "translateY(-10px) scale(0.96)",
+          transformOrigin: "top right",
+          transition: "opacity 0.28s ease, transform 0.32s cubic-bezier(0.22, 1, 0.36, 1)",
         }}
       >
-        <p style={{ fontSize: 11, fontWeight: 700, letterSpacing: "0.14em", textTransform: "uppercase", color: "#06b6d4", marginBottom: 8 }}>Navigation</p>
         {navLinks.map(({ label, href }) => (
           <a
             key={label}
             href={href}
             onClick={onCloseMenu}
             style={{
-              fontSize: 17, fontWeight: 600, color: textPrimary,
-              textDecoration: "none", padding: "12px 16px",
-              borderRadius: 12,
-              backgroundColor: dark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.04)",
-              border: `1px solid ${dark ? "rgba(255,255,255,0.07)" : "rgba(0,0,0,0.06)"}`,
-              transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
+              fontSize: 16, fontWeight: 700, color: textPrimary,
+              textDecoration: "none", padding: "6px 2px",
+              backgroundColor: "transparent",
+              border: "none",
+              transition: "color 0.2s ease, transform 0.2s ease",
               display: "block",
             }}
-            onMouseEnter={e => e.currentTarget.style.backgroundColor = dark ? "rgba(6,182,212,0.15)" : "rgba(6,182,212,0.08)"}
-            onMouseLeave={e => e.currentTarget.style.backgroundColor = dark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.04)"}
+            onMouseEnter={e => { e.currentTarget.style.color = "#06b6d4"; e.currentTarget.style.transform = "translateX(4px)" }}
+            onMouseLeave={e => { e.currentTarget.style.color = textPrimary; e.currentTarget.style.transform = "translateX(0)" }}
           >
             {label}
           </a>

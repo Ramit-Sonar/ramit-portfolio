@@ -138,21 +138,17 @@ h6 {
 
 @media (max-width: 720px) {
   .mobile-drawer-panel {
-    top: 10px !important;
-    right: 10px !important;
-    bottom: 10px !important;
-    width: min(320px, calc(100vw - 20px)) !important;
-    border-radius: 24px !important;
-    padding: 88px 18px 24px !important;
-    gap: 12px !important;
+    top: 70px !important;
+    right: 18px !important;
+    width: 150px !important;
+    max-width: calc(100vw - 32px) !important;
   }
 
   .mobile-drawer-panel a {
-    min-height: 54px !important;
+    min-height: 34px !important;
     display: flex !important;
     align-items: center !important;
-    font-size: 18px !important;
-    border-radius: 16px !important;
+    font-size: 16px !important;
   }
 }
 
