@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import AboutSection from "@/components/AboutSection"
+import Certificates from "@/components/Certificates"
 import ContactSection from "@/components/ContactSection"
 import Footer from "@/components/Footer"
 import Navbar from "@/components/Navbar"
@@ -48,6 +49,7 @@ export default function App() {
         <AboutSection dark={dark} textPrimary={textPrimary} />
         <ProjectsSection dark={dark} textSecondary={textSecondary} borderColor={borderColor} cardBg={cardBg} />
         <SkillsSection dark={dark} />
+        <Certificates dark={dark} />
         <ContactSection
           dark={dark}
           textPrimary={textPrimary}
