@@ -1,6 +1,6 @@
 import profilePhoto from "@/assets/profile-photo.png"
-import skillBridgeImage from "@/assets/skillbridge-project.png"
-import queueLessNepalImage from "@/assets/queueless-nepal-project.png"
+import skillBridgeImage from "@/assets/project-photo/skillbridge-project.png"
+import queueLessNepalImage from "@/assets/project-photo/queueless-nepal-project.png"
 
 export type TechIconName =
   | "js"
