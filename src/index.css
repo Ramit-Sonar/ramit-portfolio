@@ -106,10 +106,30 @@ h6 {
 }
 
 /* ── Theme toggle button hover ── */
+.theme-toggle {
+  padding: 0;
+}
+
+.theme-toggle svg {
+  transition: transform 220ms ease, filter 220ms ease;
+}
+
 .theme-toggle:hover {
-  background: rgba(6, 182, 212, 0.12) !important;
-  border-color: rgba(6, 182, 212, 0.5) !important;
-  transform: rotate(20deg) scale(1.08);
+  background: transparent !important;
+  transform: translateY(-1px) scale(1.08);
+}
+
+.theme-toggle:hover svg {
+  filter: drop-shadow(0 4px 10px rgba(6, 182, 212, 0.35));
+}
+
+.theme-toggle:active {
+  transform: translateY(0) scale(0.96);
+}
+
+.theme-toggle:focus-visible {
+  outline: 2px solid rgba(6, 182, 212, 0.45);
+  outline-offset: 4px;
 }
 
 /* ── Nav link sliding underline ── */

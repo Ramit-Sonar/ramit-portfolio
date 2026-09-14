@@ -59,12 +59,12 @@ export default function Navbar({
             aria-label="Toggle theme"
             style={{
               position: "absolute", right: "1.5rem",
-              width: 42, height: 42, borderRadius: "50%",
-              border: `1.5px solid ${borderColor}`,
-              background: dark ? "#161b22" : "#fff",
+              width: 42, height: 42,
+              border: "none",
+              background: "transparent",
               color: dark ? "#f59e0b" : "#4f46e5", cursor: "pointer",
               display: "flex", alignItems: "center", justifyContent: "center",
-              transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
+              transition: "color 650ms cubic-bezier(0.22, 1, 0.36, 1), transform 220ms ease, filter 220ms ease",
             }}
           >
             {dark ? <SunIcon /> : <MoonIcon />}
@@ -80,13 +80,13 @@ export default function Navbar({
               aria-label="Toggle theme"
               className="theme-toggle"
               style={{
-                width: 36, height: 36, borderRadius: "50%",
-                border: `1.5px solid ${borderColor}`,
-                background: dark ? "#161b22" : "#f1f5f9",
+                width: 36, height: 36,
+                border: "none",
+                background: "transparent",
                 color: dark ? "#f59e0b" : "#4f46e5", cursor: "pointer",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 flexShrink: 0,
-                transition: "background-color 650ms cubic-bezier(0.22, 1, 0.36, 1), color 650ms cubic-bezier(0.22, 1, 0.36, 1), border-color 650ms cubic-bezier(0.22, 1, 0.36, 1)",
+                transition: "color 650ms cubic-bezier(0.22, 1, 0.36, 1), transform 220ms ease, filter 220ms ease",
               }}
             >
               {dark ? <SunIcon /> : <MoonIcon />}
