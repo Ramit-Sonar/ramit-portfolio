@@ -433,10 +433,15 @@ h6 {
 .certificates-loop {
   --certificate-gap: 1.25rem;
   display: flex;
-  gap: var(--certificate-gap);
-  padding-right: var(--certificate-gap);
   width: max-content;
   animation: certificates-auto-scroll 42s linear infinite;
+}
+
+.certificates-group {
+  display: flex;
+  flex: 0 0 auto;
+  gap: var(--certificate-gap);
+  padding-right: var(--certificate-gap);
 }
 
 .certificates-track:hover .certificates-loop,
@@ -569,6 +574,10 @@ h6 {
   }
 
   .certificate-card-duplicate {
+    display: none;
+  }
+
+  .certificates-group-duplicate {
     display: none;
   }
 }

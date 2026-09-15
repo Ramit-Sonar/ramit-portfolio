@@ -134,7 +134,6 @@ function CertificateCard({ certificate, dark, isDuplicate = false }: { certifica
 
 export default function Certificates({ dark }: { dark: boolean }) {
   const textSecondary = dark ? "#94a3b8" : "#6b7280"
-  const carouselCertificates = [...certificates, ...certificates]
 
   return (
     <section id="certificates" className="section-pad scroll-reveal" style={{ backgroundColor: dark ? "#0d1117" : "#f3f4f6" }}>
@@ -151,14 +150,25 @@ export default function Certificates({ dark }: { dark: boolean }) {
 
         <div className="certificates-track" aria-label="Certificates carousel">
           <div className="certificates-loop">
-            {carouselCertificates.map((certificate, index) => (
-              <CertificateCard
-                key={`${certificate.title}-${certificate.issuer}-${index}`}
-                certificate={certificate}
-                dark={dark}
-                isDuplicate={index >= certificates.length}
-              />
-            ))}
+            <div className="certificates-group">
+              {certificates.map((certificate, index) => (
+                <CertificateCard
+                  key={`${certificate.title}-${certificate.issuer}-${index}`}
+                  certificate={certificate}
+                  dark={dark}
+                />
+              ))}
+            </div>
+            <div className="certificates-group certificates-group-duplicate" aria-hidden="true">
+              {certificates.map((certificate, index) => (
+                <CertificateCard
+                  key={`${certificate.title}-${certificate.issuer}-duplicate-${index}`}
+                  certificate={certificate}
+                  dark={dark}
+                  isDuplicate
+                />
+              ))}
+            </div>
           </div>
         </div>
       </div>
