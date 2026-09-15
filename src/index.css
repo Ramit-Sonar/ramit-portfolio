@@ -432,9 +432,9 @@ h6 {
 
 .certificates-loop {
   --certificate-gap: 1.25rem;
-  --certificate-gap-half: 0.625rem;
   display: flex;
   gap: var(--certificate-gap);
+  padding-right: var(--certificate-gap);
   width: max-content;
   animation: certificates-auto-scroll 42s linear infinite;
 }
@@ -449,7 +449,7 @@ h6 {
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-50% - var(--certificate-gap-half)));
+    transform: translateX(-50%);
   }
 }
 
@@ -541,8 +541,7 @@ h6 {
 @media (max-width: 640px) {
   .certificates-loop {
     --certificate-gap: 1rem;
-    --certificate-gap-half: 0.5rem;
-    animation-duration: 36s;
+    animation-duration: 50s;
   }
 
   .certificate-card {
