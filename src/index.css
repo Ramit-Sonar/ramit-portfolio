@@ -432,16 +432,11 @@ h6 {
 
 .certificates-loop {
   --certificate-gap: 1.25rem;
+  --certificate-gap-half: 0.625rem;
   display: flex;
+  gap: var(--certificate-gap);
   width: max-content;
   animation: certificates-auto-scroll 42s linear infinite;
-}
-
-.certificates-group {
-  display: flex;
-  flex: 0 0 auto;
-  gap: var(--certificate-gap);
-  padding-right: var(--certificate-gap);
 }
 
 .certificates-track:hover .certificates-loop,
@@ -454,7 +449,7 @@ h6 {
     transform: translateX(0);
   }
   to {
-    transform: translateX(-50%);
+    transform: translateX(calc(-50% - var(--certificate-gap-half)));
   }
 }
 
@@ -546,7 +541,8 @@ h6 {
 @media (max-width: 640px) {
   .certificates-loop {
     --certificate-gap: 1rem;
-    animation-duration: 50s;
+    --certificate-gap-half: 0.5rem;
+    animation-duration: 42s;
   }
 
   .certificate-card {
@@ -574,10 +570,6 @@ h6 {
   }
 
   .certificate-card-duplicate {
-    display: none;
-  }
-
-  .certificates-group-duplicate {
     display: none;
   }
 }
